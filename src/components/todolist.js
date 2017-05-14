@@ -9,7 +9,7 @@ class TodoList extends Component {
                 <ul>
                     {this.props.listItem.map((todo, i) =>
                         <li key={i}>
-                            <input type="checkbox" ref="checkbox" value="" />
+                            <input type="checkbox" ref="checkbox" onClick={()=> this.props.doneItem()}/>
                             {todo}
                             <span> </span>
                             <button className="btn btn-danger" onClick={() => this.props.removeItem(i)}>Delete</button>

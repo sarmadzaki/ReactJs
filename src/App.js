@@ -8,10 +8,16 @@ class App extends Component {
     super(props);
     this.state = {
       todos: [],
-      checkbox: false
+      checkbox: false,
+      class: ""
     }
     this.getTodos = this.getTodos.bind(this);
   }
+  doneItem() {
+    const checkbox = this.refs.checkbox.checked;
+    console.log(checkbox);
+}
+
   getTodos(e) {
     e.preventDefault();
     const todo = this.refs.todo.value;
@@ -41,7 +47,11 @@ class App extends Component {
           <span> </span>
           <button onClick={this.getTodos} className="btn btn-primary">ADD</button>
         </form>
-        <TodoList listItem={this.state.todos} removeItem={(i) => this.removeItem(i)} checking={this.state.checkbox} />
+        <TodoList
+          listItem={this.state.todos}
+          doneClass={this.state.class}
+          removeItem={(i) => this.removeItem(i)}
+          doneItem={() => this.doneItem()} />
       </div>
     );
   }
