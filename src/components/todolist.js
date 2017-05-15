@@ -8,8 +8,10 @@ class TodoList extends Component {
             <div>
                 <ul>
                     {this.props.listItem.map((todo, i) =>
-                        <li key={i}>
-                            <input type="checkbox" ref="checkbox" onClick={()=> this.props.doneItem()}/>
+                        <li key={i} className={this.props.giveClass}>
+                            <input  type="checkbox" ref="checkbox"
+                             className="" 
+                             onChange={(event)=> this.props.doneItem(i, event)}/>
                             {todo}
                             <span> </span>
                             <button className="btn btn-danger" onClick={() => this.props.removeItem(i)}>Delete</button>
