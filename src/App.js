@@ -53,7 +53,7 @@ class App extends Component {
     this.setState({
       data
     })
-    task=""
+    this.refs.task.value=""
   }
 
   removeItem(i) {
