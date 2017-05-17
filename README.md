@@ -1,5 +1,5 @@
-##TODO WITH REACT.JS
-###Installation
+## TODO WITH REACT.JS
+### Installation
 1-Download or clone the Repository
 2-cd into cloned or Extracted Folder
 3-Run npm install
